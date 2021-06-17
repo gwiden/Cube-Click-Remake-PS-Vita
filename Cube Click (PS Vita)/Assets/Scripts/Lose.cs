@@ -13,6 +13,8 @@ public class Lose : MonoBehaviour
 
     private void Awake()
     {
+        _replayButton.onClick.AddListener(delegate { Application.LoadLevel("play"); });
+        _homeButton.onClick.AddListener(delegate { Application.LoadLevel("main"); });
         _scoreText.text = PlayerPrefs.GetInt("Score").ToString();
         for (int i = 0; i < _positionsVec3.Length; i++)
         {
